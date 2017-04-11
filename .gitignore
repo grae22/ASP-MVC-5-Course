@@ -2,5 +2,7 @@ Vidly/packages/
 Vidly/Vidly/bin/
 Vidly/Vidly/obj/
 
-.suo
-.user
+*.suo
+*.user
+*.mdf
+*.ldf
