@@ -4,5 +4,6 @@ Vidly/Vidly/obj/
 
 *.suo
 *.user
+*.csproj.user
 *.mdf
 *.ldf

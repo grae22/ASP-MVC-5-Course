@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201704111850259_AddMembershipType.Designer.cs">
       <DependentUpon>201704111850259_AddMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706201535193_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201706201535193_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201706201535193_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -223,6 +227,10 @@
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Vidly-20170408101351.mdf" />
+    <Content Include="App_Data\aspnet-Vidly-20170408101351_log.ldf">
+      <DependentUpon>aspnet-Vidly-20170408101351.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -287,9 +295,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -304,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704111850259_AddMembershipType.resx">
       <DependentUpon>201704111850259_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706201535193_PopulateMembershipTypes.resx">
+      <DependentUpon>201706201535193_PopulateMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
