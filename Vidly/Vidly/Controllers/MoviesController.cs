@@ -29,5 +29,22 @@ namespace Vidly.Controllers
       
       return View( movies );
     }
+
+    [Route( "Movies/Details/{id}" )]
+    public ActionResult Details( int id )
+    {
+      Movie movie =
+        _context
+          .Movies
+          .Include( m => m.Genre )
+          .FirstOrDefault( m => m.Id == id );
+
+      if( movie == null )
+      {
+        return HttpNotFound();
+      }
+
+      return View( movie );
+    }
   }
 }
