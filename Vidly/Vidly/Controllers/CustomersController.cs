@@ -22,7 +22,11 @@ namespace Vidly.Controllers
 
     public ViewResult Index()
     {
-      var customers = _context.Customers.Include( c => c.MembershipType ).ToList();
+      var customers =
+        _context
+          .Customers
+          .Include( c => c.MembershipType )
+          .ToList();
 
       return View( customers );
     }
@@ -30,7 +34,11 @@ namespace Vidly.Controllers
     [Route( "Customers/Details/{id}" )]
     public ActionResult Details( int id )
     {
-      Customer customer = _context.Customers.FirstOrDefault( m => m.Id == id );
+      Customer customer =
+        _context
+          .Customers
+          .Include( c => c.MembershipType )
+          .FirstOrDefault( m => m.Id == id );
 
       if( customer == null )
       {

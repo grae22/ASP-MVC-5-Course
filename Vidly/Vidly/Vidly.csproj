@@ -227,6 +227,14 @@
     <Compile Include="Migrations\201706201607544_SeedMembershipTypeNames.Designer.cs">
       <DependentUpon>201706201607544_SeedMembershipTypeNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706201617599_AddingCustomerBirthDate.cs" />
+    <Compile Include="Migrations\201706201617599_AddingCustomerBirthDate.Designer.cs">
+      <DependentUpon>201706201617599_AddingCustomerBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706201626439_CustomerBirthdataMadeNullable.cs" />
+    <Compile Include="Migrations\201706201626439_CustomerBirthdataMadeNullable.Designer.cs">
+      <DependentUpon>201706201626439_CustomerBirthdataMadeNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -239,10 +247,6 @@
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-Vidly-20170408101351.mdf" />
-    <Content Include="App_Data\aspnet-Vidly-20170408101351_log.ldf">
-      <DependentUpon>aspnet-Vidly-20170408101351.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -307,7 +311,9 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -334,6 +340,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706201607544_SeedMembershipTypeNames.resx">
       <DependentUpon>201706201607544_SeedMembershipTypeNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706201617599_AddingCustomerBirthDate.resx">
+      <DependentUpon>201706201617599_AddingCustomerBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706201626439_CustomerBirthdataMadeNullable.resx">
+      <DependentUpon>201706201626439_CustomerBirthdataMadeNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
