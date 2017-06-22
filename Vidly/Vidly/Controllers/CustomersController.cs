@@ -20,6 +20,12 @@ namespace Vidly.Controllers
       _context.Dispose();
     }
 
+    [Route( "Customers/New" )]
+    public ActionResult New()
+    {
+      return View();
+    }
+
     public ViewResult Index()
     {
       var customers =
