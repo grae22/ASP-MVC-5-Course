@@ -1,12 +1,12 @@
-﻿
+﻿@model IEnumerable<Vidly.Models.Customer>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Customers</h2>
 
-@if( Model.Count == 0 )
+@if( Model.Any() == false )
 {
   <p>No customers found.</p>
 }
@@ -20,7 +20,14 @@ else
     @foreach( var customer in Model )
     {
       <tr>
-        <td><a href="Customers/Details/@customer.Id">@customer.Name</a></td>
+        <td>
+          @Html.ActionLink(
+            customer.Name,
+            "Edit",
+            "Customers",
+            new { id = customer.Id },
+            null )
+        </td>
         <td>@customer.MembershipType.Name</td>
       </tr>
     }
