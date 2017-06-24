@@ -4,7 +4,7 @@
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if( Model.Movie == null )
+@if( Model.Id == null )
 {
   <h2>New Movie</h2>
 }
@@ -20,38 +20,38 @@ else
     "Please fix the following:" )
 
   <div class="form-group">
-    @Html.LabelFor( m => m.Movie.Name )
-    @Html.TextBoxFor( m => m.Movie.Name, new { @class = "form-control" } )
-    @Html.ValidationMessageFor( m => m.Movie.Name )
+    @Html.LabelFor( m => m.Name )
+    @Html.TextBoxFor( m => m.Name, new { @class = "form-control" } )
+    @Html.ValidationMessageFor( m => m.Name )
   </div>
   <div class="form-group">
-    @Html.LabelFor( m => m.Movie.ReleaseDate )
+    @Html.LabelFor( m => m.ReleaseDate )
     @Html.TextBoxFor(
-      m => m.Movie.ReleaseDate,
+      m => m.ReleaseDate,
       "{0:d MMM yyyy}",
       new { @class = "form-control" } )
-    @Html.ValidationMessageFor( m => m.Movie.ReleaseDate )
+    @Html.ValidationMessageFor( m => m.ReleaseDate )
   </div>
   <div class="form-group">
-    @Html.LabelFor( m => m.Movie.GenreId )
+    @Html.LabelFor( m => m.GenreId )
     @Html.DropDownListFor(
-      m => m.Movie.GenreId,
+      m => m.GenreId,
       new SelectList(
         Model.Genres,
         "Id",
         "Name" ),
       "Select one...",
       new { @class = "form-control" } )
-    @Html.ValidationMessageFor( m => m.Movie.GenreId )
+    @Html.ValidationMessageFor( m => m.GenreId )
   </div>
   <div class="form-group">
-    @Html.LabelFor( m => m.Movie.NumberInStock )
+    @Html.LabelFor( m => m.NumberInStock )
     @Html.TextBoxFor(
-      m => m.Movie.NumberInStock,
+      m => m.NumberInStock,
       new { @class = "form-control" } )
-    @Html.ValidationMessageFor( m => m.Movie.NumberInStock )
+    @Html.ValidationMessageFor( m => m.NumberInStock )
   </div>
-  @Html.HiddenFor( m => m.Movie.Id );
+  @Html.HiddenFor( m => m.Id );
   @Html.AntiForgeryToken()
   <button type="submit" class="btn btn-primary">Save</button>
 }
