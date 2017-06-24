@@ -30,6 +30,12 @@
       "Select one...",
       new { @class = "form-control" } )
   </div>
+  <div class="form-group">
+    @Html.LabelFor( m => m.Movie.NumberInStock )
+    @Html.TextBoxFor(
+      m => m.Movie.NumberInStock,
+      new { @class = "form-control" } )
+  </div>
   @Html.HiddenFor( m => m.Movie.Id );
   <button type="submit" class="btn btn-primary">Save</button>
 }

@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using System.Data.Entity;
 using System.Linq;
 using Vidly.Models;
@@ -56,6 +57,17 @@ namespace Vidly.Controllers
       };
 
       return View( "MovieForm", viewModel );
+    }
+
+    [HttpPost]
+    public ActionResult Save( Movie movie )
+    {
+      movie.DateAdded = DateTime.Now;
+
+      _context.Movies.Add( movie );
+      _context.SaveChanges();
+
+      return RedirectToAction( "Index", "Movies" );
     }
   }
 }
