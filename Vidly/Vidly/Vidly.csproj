@@ -255,6 +255,10 @@
     <Compile Include="Migrations\201706241347202_GenresAdded.Designer.cs">
       <DependentUpon>201706241347202_GenresAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706241434228_AddedRequiredFieldsOnMovie.cs" />
+    <Compile Include="Migrations\201706241434228_AddedRequiredFieldsOnMovie.Designer.cs">
+      <DependentUpon>201706241434228_AddedRequiredFieldsOnMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -386,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706241347202_GenresAdded.resx">
       <DependentUpon>201706241347202_GenresAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706241434228_AddedRequiredFieldsOnMovie.resx">
+      <DependentUpon>201706241434228_AddedRequiredFieldsOnMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
