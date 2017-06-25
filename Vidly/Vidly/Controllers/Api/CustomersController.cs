@@ -83,9 +83,7 @@ namespace Vidly.Controllers.Api
 
       _context.SaveChanges();
 
-      return Created(
-        new Uri( Request.RequestUri + "/" + customerInDb.Id ),
-        customerDto );
+      return StatusCode( HttpStatusCode.Accepted );
     }
 
     // DELETE: /api/customers/1
@@ -102,7 +100,7 @@ namespace Vidly.Controllers.Api
       _context.Customers.Remove( customerInDb );
       _context.SaveChanges();
 
-      return Ok();
+      return StatusCode( HttpStatusCode.Accepted );
     }
   }
 }
