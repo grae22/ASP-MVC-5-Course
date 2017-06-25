@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Vidly.Dtos;
 
 namespace Vidly.Models
 {
@@ -8,7 +9,16 @@ namespace Vidly.Models
     protected override ValidationResult IsValid( object value,
                                                  ValidationContext validationContext )
     {
-      var customer = (Customer)validationContext.ObjectInstance;
+      dynamic customer;
+      
+      if( typeof( Customer ).IsAssignableFrom( validationContext.ObjectInstance.GetType() ) )
+      {
+        customer = (Customer)validationContext.ObjectInstance;
+      }
+      else
+      {
+        customer = (CustomerDto)validationContext.ObjectInstance;
+      }
 
       if( customer.MembershipTypeId == MembershipType.Unknown ||
           customer.MembershipTypeId == MembershipType.PayAsYouGo )
@@ -21,7 +31,7 @@ namespace Vidly.Models
         return new ValidationResult( "Birth-date is required." );
       }
 
-      var age = DateTime.Today.Year - customer.BirthDate.Value.Year;
+      var age = DateTime.Today.Year - customer.BirthDate.Year;
 
       return ( age >= 18 ) ?
         ValidationResult.Success :
