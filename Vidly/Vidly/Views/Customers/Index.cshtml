@@ -35,24 +35,22 @@
         [
           {
             data: "name",
-            render: function( data, type, customer )
-            {
-              return
-                "<a href='/customers/edit/" + customer.id + "'>" +
-                customer.name + "</a>";
-            }
+            render:
+              function( data, type, customer )
+              {
+                return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
+              }
           },
           {
             data: "name"
           },
           {
             data: "id",
-            render: function( data )
-            {
-              return
-                "<button class='btn-link js-delete' " +
-                "data-customer-id=" + data + ">Delete</button>";
-            }
+            render:
+              function( data )
+              {
+                return "<button class='btn-link js-delete' " + "data-customer-id=" + data + ">Delete</button>";
+              }
           }
         ]
       });
