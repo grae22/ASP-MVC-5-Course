@@ -3,119 +3,141 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Vidly.Models
 {
-    public class ExternalLoginConfirmationViewModel
+  public class ExternalLoginListViewModel
+  {
+    public string ReturnUrl
     {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+      get; set;
+    }
+  }
 
-        [Required]
-        [Display(Name = "Driving LIcense")]
-        [StringLength( 255 )]
-        public string DrivingLicense { get; set; }
+  public class SendCodeViewModel
+  {
+    public string SelectedProvider
+    {
+      get; set;
+    }
+    public ICollection<System.Web.Mvc.SelectListItem> Providers
+    {
+      get; set;
+    }
+    public string ReturnUrl
+    {
+      get; set;
+    }
+    public bool RememberMe
+    {
+      get; set;
+    }
+  }
+
+  public class VerifyCodeViewModel
+  {
+    [Required]
+    public string Provider
+    {
+      get; set;
     }
 
-    public class ExternalLoginListViewModel
+    [Required]
+    [Display( Name = "Code" )]
+    public string Code
     {
-        public string ReturnUrl { get; set; }
+      get; set;
+    }
+    public string ReturnUrl
+    {
+      get; set;
     }
 
-    public class SendCodeViewModel
+    [Display( Name = "Remember this browser?" )]
+    public bool RememberBrowser
     {
-        public string SelectedProvider { get; set; }
-        public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
-        public string ReturnUrl { get; set; }
-        public bool RememberMe { get; set; }
+      get; set;
     }
 
-    public class VerifyCodeViewModel
+    public bool RememberMe
     {
-        [Required]
-        public string Provider { get; set; }
+      get; set;
+    }
+  }
 
-        [Required]
-        [Display(Name = "Code")]
-        public string Code { get; set; }
-        public string ReturnUrl { get; set; }
+  public class ForgotViewModel
+  {
+    [Required]
+    [Display( Name = "Email" )]
+    public string Email
+    {
+      get; set;
+    }
+  }
 
-        [Display(Name = "Remember this browser?")]
-        public bool RememberBrowser { get; set; }
-
-        public bool RememberMe { get; set; }
+  public class LoginViewModel
+  {
+    [Required]
+    [Display( Name = "Email" )]
+    [EmailAddress]
+    public string Email
+    {
+      get; set;
     }
 
-    public class ForgotViewModel
+    [Required]
+    [DataType( DataType.Password )]
+    [Display( Name = "Password" )]
+    public string Password
     {
-        [Required]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+      get; set;
     }
 
-    public class LoginViewModel
+    [Display( Name = "Remember me?" )]
+    public bool RememberMe
     {
-        [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+      get; set;
+    }
+  }
 
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
-
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
+  public class ResetPasswordViewModel
+  {
+    [Required]
+    [EmailAddress]
+    [Display( Name = "Email" )]
+    public string Email
+    {
+      get; set;
     }
 
-    public class RegisterViewModel
+    [Required]
+    [StringLength( 100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6 )]
+    [DataType( DataType.Password )]
+    [Display( Name = "Password" )]
+    public string Password
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
-
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
-
-        [Required]
-        [Display(Name = "Driving License")]
-        public string DrivingLicense { get; set; }
+      get; set;
     }
 
-    public class ResetPasswordViewModel
+    [DataType( DataType.Password )]
+    [Display( Name = "Confirm password" )]
+    [Compare( "Password", ErrorMessage = "The password and confirmation password do not match." )]
+    public string ConfirmPassword
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
-
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
-
-        public string Code { get; set; }
+      get; set;
     }
 
-    public class ForgotPasswordViewModel
+    public string Code
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+      get; set;
     }
+  }
+
+  public class ForgotPasswordViewModel
+  {
+    [Required]
+    [EmailAddress]
+    [Display( Name = "Email" )]
+    public string Email
+    {
+      get; set;
+    }
+  }
 }
