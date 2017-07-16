@@ -37,6 +37,11 @@ namespace Vidly.Controllers.Api
           DateRented = DateTime.Now
         };
 
+        if( movie.NumberAvailable == 0 )
+        {
+          return BadRequest( "Movie is not available." );
+        }
+
         movie.NumberAvailable--;
 
         _context.Rentals.Add( rental );
