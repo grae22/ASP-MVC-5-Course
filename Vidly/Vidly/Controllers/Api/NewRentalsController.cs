@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Net;
 using System.Web.Http;
 using Vidly.Dtos;
 using Vidly.Models;
@@ -37,6 +36,8 @@ namespace Vidly.Controllers.Api
           Movie = movie,
           DateRented = DateTime.Now
         };
+
+        movie.NumberAvailable--;
 
         _context.Rentals.Add( rental );
       }
